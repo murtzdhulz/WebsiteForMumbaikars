@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Register</title>
+<script>
+function validateForm()
+{
+ var x=document.forms["mumbai"]["firstname"].value;
+ var y=document.forms["mumbai"]["lastname"].value;
+ var z=document.forms["mumbai"]["area"].value;
+ var a=document.forms["mumbai"]["cno"].value;
+ var b=document.forms["mumbai"]["email"].value;
+  if (x==null || x=="")
+   {
+    alert("First name must be filled out");
+    return false;
+   }
+  if (y==null || y=="")
+   {
+    alert("Last name must be filled out");
+    return false;
+   }
+  if (z==null || z=="")
+   {
+    alert("Area must be specified");
+    return false;
+   }
+   if (a==null || a=="")
+   {
+    alert("Contact number is compulsory");
+    return false;
+   }
+   if (b==null || b=="")
+   {
+    alert("Email address required");
+    return false;
+   }
+   else
+   {
+	alert("Thankyou for registering");
+	return true;
+   }
+}
+</script>
+</head>
+<body background="blue-abstract-sparkly-waves.jpg" bgproperties="fixed"><center>
+<h1 style="color:#CCCCCC">Register</h1>
+<div style="left:25%;width:50%;color:#FFFF99">
+<p align="center">
+As we know this website is made so that you can voice your opinions. But along with that it is also important for us to know what is going on in our city. We need to know the real grave problems that are existent in the city and their consequences. We also need to be updated about the various thing different authorities are doing for betterment of the city. We shall keep you informed about all these things via sms and email. All you need to do is register with us by filling out the details below and hit Submit.
+</p>
+</div>
+<br/>
+<form action="reg.php" method="post" name="mumbai" onSubmit="return validateForm()" >
+<table  style="color:white;alignment-adjust:central">
+<tr>
+<td>First name: </td><td><input type="text" name="firstname" /></td>
+</tr>
+<tr>
+<td>Last name: </td><td><input type="text" name="lastname" /></td>
+</tr>
+<tr>
+<td>Area: </td><td><input type="text" name="area" /></td> 
+</tr>
+<tr>
+<td>Contact no.: </td><td><input type="text" name="cno" /></td>
+</tr>
+<tr>
+<td>E-mail: </td><td><input type="text" name="email" /></td>
+</tr>
+<tr>
+ <tr >
+ <td ><input type="submit" value="Submit" /></td>
+ </tr>
+ </table>
+</body>
+</html>

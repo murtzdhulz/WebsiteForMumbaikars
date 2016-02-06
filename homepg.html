@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>Problems? Tell Mumbaikars</title>
+
+<style>
+hr {
+    height:5px;
+    width:100%;
+    background:#446791;  
+   }
+</style>
+<style type="text/css">
+
+.gradientbuttons ul{
+padding: 3px 0;
+margin-left: 0;
+margin-top: 1px;
+margin-bottom: 0;
+font: bold 13px Verdana;
+list-style-type: none;
+text-align: center; /*set to left, center, or right to align the menu as desired*/
+}
+
+.gradientbuttons li{
+display: inline;
+margin: 0;
+}
+
+.gradientbuttons li a{
+text-decoration: none;
+padding: 5px 7px;
+margin-right: 5px;
+border: 1px solid #778;
+color: white;
+border:1px solid gray;
+background: #3282c2;
+border-radius: 8px; /*w3c border radius*/
+box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* w3c box shadow */
+-moz-border-radius: 8px; /* mozilla border radius */
+-moz-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* mozilla box shadow */
+background: -moz-linear-gradient(center top, #a4ccec, #72a6d4 25%, #3282c2 45%, #357cbd 85%, #72a6d4); /* mozilla gradient background */
+-webkit-border-radius: 8px; /* webkit border radius */
+-webkit-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* webkit box shadow */
+background: -webkit-gradient(linear, center top, center bottom, from(#a4ccec), color-stop(25%, #72a6d4), color-stop(45%, #3282c2), color-stop(85%, #357cbd), to(#72a6d4)); /* webkit gradient background */
+}
+
+.gradientbuttons li a:hover{
+color: #3CF;
+}
+
+.redtheme li a{
+font-size:18px;
+background: darkred;
+background: -moz-linear-gradient(center top, #f5795d, #e55e3f 25%, #d02700 45%, #e55e3f 85%, #f5795d);
+background: -webkit-gradient(linear, center top, center bottom, from(#f5795d), color-stop(25%, #e55e3f), color-stop(45%, #d02700), color-stop(85%, #e55e3f), to(#f5795d)); 
+}
+
+</style>
+<style>
+
+.imagepluscontainer{ /* main image container */
+position: relative;
+z-index: 1;
+}
+
+.imagepluscontainer img{ /* CSS for image within container */
+position: relative;
+z-index: 2;
+-moz-transition: all 0.5s ease; /* Enable CSS3 transition on all props */
+-webkit-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+}
+
+.imagepluscontainer:hover img{ /* CSS for image when mouse hovers over main container */
+-moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+-webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+-moz-transform: scale(1.05, 1.05);
+-webkit-transform: scale(1.05, 1.05);
+-ms-transform: scale(1.05, 1.05);
+-o-transform: scale(1.05, 1.05);
+transform: scale(1.05, 1.05);
+}
+
+.imagepluscontainer div.desc{ /* CSS for desc div of each image. */
+position: absolute;
+width: 90%;
+z-index: 1; /* Set z-index to that less than image's, so it's hidden beneath it */
+bottom: 0; /* Default position of desc div is bottom of container, setting it up to slide down */
+left: 5px;
+padding: 8px;
+background: rgba(0, 0, 0, 0.8); /* black bg with 80% opacity */
+color: white;
+-moz-border-radius: 0 0 8px 8px; /* CSS3 rounded borders */
+-webkit-border-radius: 0 0 8px 8px;
+border-radius: 0 0 8px 8px;
+opacity: 0; /* Set initial opacity to 0 */
+-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8); /* CSS3 shadows */
+-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+-moz-transition: all 0.5s ease 0.5s; /* Enable CSS3 transition on desc div. Final 0.5s value is the delay before animation starts */
+-webkit-transition: all 0.5s ease 0.5s;
+-o-transition: all 0.5s ease 0.5s;
+-ms-transition: all 0.5s ease 0.5s;
+transition: all 0.5s ease 0.5s;
+}
+
+.imagepluscontainer div.desc a{
+color: white;
+}
+
+.imagepluscontainer:hover div.desc{ /* CSS for desc div when mouse hovers over main container */
+-moz-transform: translate(0, 100%);
+-webkit-transform: translate(0, 100%);
+-ms-transform: translate(0, 100%);
+-o-transform: translate(0, 100%);
+transform: translate(0, 100%);
+opacity:1; /* Reveal desc DIV fully */
+}
+
+/*### Below CSS when applied to desc DIV slides the desc div from the right edge of the image ###*/
+
+.imagepluscontainer div.rightslide{
+width: 150px; /* reset from default */
+top:15px;
+right:0;
+left:auto;  /* reset from default */
+bottom:auto;  /* reset from default */
+padding-left:15px;
+-moz-border-radius: 0 8px 8px 0;
+-webkit-border-radius: 0 8px 8px 0;
+border-radius: 0 8px 8px 0;
+}
+
+.imagepluscontainer:hover div.rightslide{
+-moz-transform: translate(100%, 0);
+-webkit-transform: translate(100%, 0);
+-ms-transform: translate(100%, 0);
+-o-transform: translate(100%, 0);
+transform: translate(100%, 0);
+}
+
+/*### Below CSS when applied to desc DIV slides the desc div from the left edge of the image ###*/
+
+.imagepluscontainer div.leftslide{
+width: 340px;  /* reset from default */
+top:15px;
+left:0;
+bottom:auto;  /* reset from default */
+padding-left:15px;
+-moz-border-radius: 8px 0 0 8px;
+-webkit-border-radius: 8px 0 0 8px;
+border-radius: 8px 0 0 8px;
+}
+
+.imagepluscontainer:hover div.leftslide{
+-moz-transform: translate(-100%, 0);
+-webkit-transform: translate(-100%, 0);
+-ms-transform: translate(-100%, 0);
+-o-transform: translate(-100%, 0);
+transform:translate(-100%, 0);
+}
+
+/*### Below CSS when applied to desc DIV slides the desc div from the top edge of the image ###*/
+
+.imagepluscontainer div.upslide{
+top:0;
+bottom:auto;  /* reset from default */
+padding-bottom:10px;
+-moz-border-radius: 8px 8px 0 0;
+-webkit-border-radius: 8px 8px 0 0;
+border-radius: 8px 8px 0 0;
+}
+
+.imagepluscontainer:hover div.upslide{
+-moz-transform: translate(0, -100%);
+-webkit-transform: translate(0, -100%);
+-ms-transform: translate(0, -100%);
+-o-transform: translate(0, -100%);
+transform:translate(0, -100%);
+}
+</style>
+
+</head>
+
+<body background="Mumbai-Night-view-India-768x1366.jpg" bgproperties="fixed">
+<hr>
+<center>
+<h1><font color="ffa300"><u>Problems? Tell Mumbaikars</font></u>
+</h1>
+</center>
+<div>
+<a href="register.html" style="color:#003300; font-size:16px;
+font-family:Georgia, 'Times New Roman'; margin-left:95%;"><b>Register</b></a>
+<div>
+<center>
+<hr>
+<div class="gradientbuttons redtheme">
+<ul>
+<li><a href="homepg.html">Home</a></li>
+<li><a href="">Blog</a></li>
+<li><a href="about us.html">About Us</a></li>
+</ul>
+</div>
+<table>
+<td style="height:20px;width:800px;text-align:top;font-family:Comic Sans MS;color:white">
+<p>
+This website is for every Mumbaikar who faces a thousand problems each day he/she has to step out in the city, but has 
+no one who could heed those problems.
+</p>
+<p>
+Mumbai is one of the most beautiful cities in the world ! With aesthetic beauty of places like the marine drive or the Sanjay Gandhi national park !
+We developed for almost nothing to be one of the most powerful metropolitans. And even though we are proud of that, 
+today there are many things which should and can change. However,that is not possible without public support.
+</p>
+<p style="font-family:Comic Sans MS;color:white">
+So here we are...providing you the means to voice your opinions ! To say whAT is right ! We want to achieve public support ! And if the support is very good, we will take
+the initiative of informing the authorities and officials as per the matter at hand !..
+</p> 
+</td>
+</table>
+</center>
+<div class="imagepluscontainer" style="width:300px; height:211px; z-index:2">
+<img src="gateway.jpg" style="width:300px; height:211px; z-index:2" />
+<div class="desc rightslide">
+The Gateway of India is a monument built during the British Raj in Mumbai,India. Located on the waterfront in the Apollo Bunder area in South Mumbai, the monument overlooks the Arabian Sea.
+</div>
+</div>
+<br/>
+<div class="imagepluscontainer" style="width:350px; height:217px; z-index:2; left:32%">
+<img src="Mumbai-before-sunrise-768x1366.jpg" style="width:350px; height:217px; z-index:2" />
+<div class="desc upslide">
+Marine Drive is a 3-kilometre-long boulevard in South Mumbai in the city of Mumbai. It is a 'C'-shaped six-lane concrete road along the coast, which is a natural bay. It is the heart of this city !
+</div>
+</div>
+<br/>
+<div class="imagepluscontainer" style="width:350px; height:217px; z-index:2; left:63%">
+<img src="700px-Victoria_Terminus,_Mumbai.jpg" style="width:480px; height:240px; z-index:2" />
+<div class="desc leftslide">
+Chhatrapati Shivaji Terminus, formerly Victoria Terminus, is a UNESCO World Heritage Site and historic railway station which serves as the headquarters of the Central Railways in Mumbai, India.
+Designed by Frederick William Stevens with influences from Victorian Italianate Gothic Revival architecture and Indian traditional buildings, the station was built in 1887. It is one of the heritage monuments of Mumbai.
+</div>
+</div>
+<br />
+<br />
+<hr style="background:#CC0000; border: ridge; height:5px;" />
+</body>
+</html>
